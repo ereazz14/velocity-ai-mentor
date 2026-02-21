@@ -1,0 +1,15 @@
+# Gereksiz kütüphane dosyaları (Çok yer kaplar)
+node_modules/
+**/node_modules/
+
+# Gizli anahtarlar (Bunu sakın yükleme!)
+.env
+**/.env
+
+# Derlenmiş dosyalar
+dist/
+build/
+
+# Loglar ve Sistem dosyaları
+*.log
+.DS_Store

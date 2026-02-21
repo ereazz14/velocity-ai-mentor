@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Arka planı koyu yapalım ki gözümüz yorulmasın */
+body {
+    background-color: #0f172a;
+    color: white;
+}
