@@ -6,6 +6,9 @@ import {
   Target, Trophy, XOctagon, RefreshCw, Briefcase, ChevronRight, Star 
 } from 'lucide-react';
 
+
+const API_URL = "https://velocity-api-a7xz.onrender.com";
+
 function App() {
   // --- STATE YÖNETİMİ ---
   const [activeTab, setActiveTab] = useState('interview'); // 'interview' | 'roadmap'
@@ -28,7 +31,7 @@ function App() {
     if (!jobDescription) return alert("Lütfen iş tanımını girin.");
     setLoading(true); setQuestions(null); setAnswers({}); setFeedbacks({}); setModelAnswers({}); setShowResult(false);
     try {
-      const response = await axios.post('http://localhost:5000/mulakat-uret', { jobDescription });
+      const response = await axios.post('${API_URL}/mulakat-uret', { jobDescription });
       let cleanText = typeof response.data.questions === 'string' ? response.data.questions.replace(/```json|```/g, '') : JSON.stringify(response.data.questions);
       setQuestions(JSON.parse(cleanText));
     } catch (error) { alert("Bağlantı hatası."); } finally { setLoading(false); }
@@ -38,7 +41,7 @@ function App() {
       if (!targetRole) return alert("Hedef pozisyonu yazın.");
       setLoadingPlan(true); setCareerPlan(null);
       try {
-          const response = await axios.post('http://localhost:5000/kariyer-plani', { targetRole });
+          const response = await axios.post('${API_URL}/kariyer-plani', { targetRole });
           setCareerPlan(response.data);
       } catch (error) { alert("Plan oluşturulamadı. Lütfen tekrar deneyin."); } finally { setLoadingPlan(false); }
   };
@@ -48,7 +51,7 @@ function App() {
     if (!userAnswer) return alert("Cevap alanı boş.");
     setEvaluating(prev => ({ ...prev, [index]: true }));
     try {
-      const response = await axios.post('http://localhost:5000/cevap-degerlendir', { question, userAnswer, jobDescription });
+      const response = await axios.post('${API_URL}/cevap-degerlendir', { question, userAnswer, jobDescription });
       setFeedbacks(prev => ({ ...prev, [index]: response.data }));
     } catch (error) { alert("Hata!"); } finally { setEvaluating(prev => ({ ...prev, [index]: false })); }
   };
@@ -57,7 +60,7 @@ function App() {
     if (modelAnswers[index]) return; 
     setLoadingAnswer(prev => ({ ...prev, [index]: true }));
     try {
-        const response = await axios.post('http://localhost:5000/ornek-cevap', { question, jobDescription });
+        const response = await axios.post('${API_URL}/ornek-cevap', { question, jobDescription });
         setModelAnswers(prev => ({ ...prev, [index]: response.data.answer }));
     } catch (error) { alert("Cevap alınamadı."); } finally { setLoadingAnswer(prev => ({ ...prev, [index]: false })); }
   };
