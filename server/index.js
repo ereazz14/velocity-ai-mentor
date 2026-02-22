@@ -18,7 +18,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 // --- TEK VE ÇALIŞAN MODEL ---
 // Mülakat sorularında hata vermeyen modelin aynısını buraya da koyduk.
-const MODEL_NAME = "gemini-1.5-flash"; 
+const MODEL_NAME = "gemini-2.0-flash-001"; 
 
 // ---------------------------------------------------------
 // 1. ROTA: Mülakat Sorusu Üretme 🧠
