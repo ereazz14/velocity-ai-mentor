@@ -15,6 +15,7 @@
 </p>
 
 🌟 Proje Hakkında
+
 Velocity, modern iş dünyasının hızına ayak uydurmak isteyen yazılımcılar için tasarlanmış bir kariyer asistanıdır. Sadece bir yol gösterici değil, aynı zamanda mülakat stresini üzerinizden atmanızı sağlayan bir antrenördür.
 
 🤖 AI Mülakat Simülatörü: Teknik yeteneklerinize göre özelleştirilmiş, gerçek zamanlı geri bildirim veren mülakatlar.
