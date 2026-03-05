@@ -33,23 +33,29 @@ Projeyi kendi bilgisayarınızda çalıştırmak için:
 1. **Repoyu klonlayın:**
    ```bash
    git clone [https://github.com/KULLANICI_ADIN/velocity-ai.git](https://github.com/KULLANICI_ADIN/velocity-ai.git)
-   
+ 
 2.  **Backend Kurulumu:**
    ```bash
    cd velocity-ai
    cd server
    npm install
+  ```
+ ```bash
 # .env dosyasını oluşturun ve GEMINI_API_KEY ekleyin
    npm run dev
+ ```
+ 
 
 3. **Frontend Kurulumu:**
-    ```bash
+     ```bash
+     
     cd ../client
     npm install
     npm run dev
-
+ 
+ 
 📸 Ekran Görüntüleri
-(Projenin ekran görüntülerini buraya ekleyeceğiz)
+
 
 Author 
 Eren Türkkorkmaz
